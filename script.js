@@ -4,7 +4,7 @@ let b;
 let operation;
 let isA = false, isB = false, isOperation = false;
 
-// buttons
+// numbers
 const numbersContainer = document.querySelector('.numbersContainer');
 const display = document.querySelector('.displayNumbers');
 for(let i = 0; i <= 9; i++) {
@@ -25,6 +25,7 @@ for(let i = 0; i <= 9; i++) {
 // operations
 const operationsContainer = document.querySelector('.operationsContainer');
 const displayOperation = document.querySelector('.displayOperation');
+const memory = document.querySelector('.memory');
 for(let i = 1; i <= 4; i++) {
   const button = document.createElement('button');
   switch(i) {
@@ -37,10 +38,29 @@ for(let i = 1; i <= 4; i++) {
       displayOperation.textContent = button.textContent;
       operation = button.textContent;
       a = display.textContent;
+      memory.textContent = a;
       display.textContent = 0;
   });
   operationsContainer.appendChild(button);
 }
+
+// equal
+const equal = document.querySelector('.equal');
+equal.addEventListener('click', () => {
+  b = display.textContent;
+  a = operate(a, b, operation);
+  display.textContent = a;
+  memory.textContent = '';
+  displayOperation.textContent = '';
+});
+
+// clear
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', () => {
+  display.textContent = 0;
+  displayOperation.textContent = '';
+  memory.textContent = '';
+});
 
 // functions
 function operate(a, b, operation) {
