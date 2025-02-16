@@ -1,9 +1,18 @@
+body {
+  justify-self: center;
+}
 h3, p {
   margin: 0;
 }
 .display {
   display: flex;
   flex-direction: column;
+}
+.memory {
+  flex: none;
+  height: 15px;
+  font-weight: 200;
+  font-size: 10px;
 }
 .displayNumbers {
   flex: none;
@@ -12,9 +21,20 @@ h3, p {
   flex: none;
   height: 15px;
 }
-.memory {
-  flex: none;
-  height: 15px;
-  font-weight: 200;
-  font-size: 10px;
+.numbersContainer {
+  display: grid;
+  width: 150px;
+  height: 200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.numberButton {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Специальный стиль для кнопки с цифрой 9 */
+.numberButton:nth-child(10) {
+  grid-column: 2;
 }
