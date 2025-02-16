@@ -16,6 +16,10 @@ A simple calculator application that performs basic arithmetic operations.
 - basic js
 - git
 
+## Project status
+
+🚧 Developing
+
 ## Contributing
 
 1. Fork the repository
